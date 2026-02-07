@@ -10,13 +10,14 @@ title: Edition Crafter demo
 
      EditionCrafter.viewer({
          id: 'ec',
-         documentName: 'BnF Ms. Fr. 640',
-         iiifManifest:'https://cu-mkp.github.io/editioncrafter-data/fr640_3r-3v-example/iiif/manifest.json',
+         documentName: 'LJS 225',
+         iiifManifest:'https://github.com/cynthiaheider/elva/content/_data/ljs225-test/ljs225-imgs/iiif/manifest.json',
          transcriptionTypes: {
-           tc: 'Diplomatic (FR)',
-           tcn: 'Normalized (FR)',
-           tl: 'Translation (EN)'
+           original: 'Original',
+           code: 'Code'
          }
      });
 
 </script>
+
+
