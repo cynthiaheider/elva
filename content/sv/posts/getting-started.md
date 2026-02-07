@@ -27,7 +27,7 @@ Installationsberoenden:
 npm install
 ```
 
-Kör Eleventy för webbplatsutveckling. Se webbplatsen på `http://localhost:8080`:
+Kör Eleventy för webbplatsutveckling. Se webbplatsen på `http://localhost:8081`:
 
 ``` bash
 npm run dev

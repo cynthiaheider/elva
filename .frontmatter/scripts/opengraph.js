@@ -5,7 +5,7 @@ import nodeHtmlToImage from 'node-html-to-image';
 const args = process.argv;
 const template = fs.readFileSync(args[1].replace('opengraph.js', 'opengraph-template.html'), 'utf8');
 const frontmatter = args[4] && typeof args[4] === "string" ? JSON.parse(args[4]) : null;
-let data = {...frontmatter, ...{ 'url': 'http://localhost:8080' }};
+let data = {...frontmatter, ...{ 'url': 'http://localhost:8081' }};
 
 // fix some potential encoding issues
 data.title && (data.title = decodeURIComponent(data.title));

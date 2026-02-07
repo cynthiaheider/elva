@@ -5,12 +5,12 @@ export default {
 			url: '/about/'
 		},
 		{
-			text: 'Documentation',
+			text: 'Theme documentation',
 			url: '/documentation/'
 		},
 		{
-			text: 'GitHub',
-			url: 'https://github.com/scottsweb/elva'
+			text: 'Edition Crafter demo',
+			url: '/editioncrafter-demo/'
 		}
     ],
     sv: [
