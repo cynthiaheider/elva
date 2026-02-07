@@ -1,18 +1,17 @@
 ---
 title: Edition Crafter demo
-layout: page
 ---
 <!-- see documentation here: https://editioncrafter.org/guide/ -->
 <div id="ec"></div>
 
- <script type="text/javascript" src="https://www.unpkg.com/@cu-mkp/editioncrafter-umd" ></script>
+<script type="text/javascript" src="https://www.unpkg.com/@cu-mkp/editioncrafter-umd"></script>
 
- <script type="text/javascript">
+<script type="text/javascript">
 
      EditionCrafter.viewer({
          id: 'ec',
          documentName: 'BnF Ms. Fr. 640',
-         iiifManifest='https://cu-mkp.github.io/editioncrafter-data/fr640_3r-3v-example/iiif/manifest.json',
+         iiifManifest:'https://cu-mkp.github.io/editioncrafter-data/fr640_3r-3v-example/iiif/manifest.json',
          transcriptionTypes: {
            tc: 'Diplomatic (FR)',
            tcn: 'Normalized (FR)',
@@ -20,4 +19,4 @@ layout: page
          }
      });
 
- </script>
+</script>
