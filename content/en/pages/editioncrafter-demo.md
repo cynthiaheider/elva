@@ -11,7 +11,7 @@ title: Edition Crafter demo
      EditionCrafter.viewer({
          id: 'ec',
          documentName: 'LJS 225',
-         iiifManifest:'https://github.com/cynthiaheider/elva/content/_data/ljs225-test/ljs225-imgs/iiif/manifest.json',
+         iiifManifest:'https://github.com/cynthiaheider/elva/blob/main/content/_data/ljs225-test/ljs225-imgs/iiif/manifest.json',
          transcriptionTypes: {
            original: 'Original',
            code: 'Code'
