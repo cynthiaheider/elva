@@ -4,7 +4,7 @@
 .frontmatter/
 .github/
 .vscode/
-dist
+_site
 node_modules
 notes.md
 package-lock.json

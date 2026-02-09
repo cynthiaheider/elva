@@ -32,7 +32,7 @@ Run Eleventy for site development. View the site at `http://localhost:8081`:
 npm run dev
 ```
 
-Generate a production-ready build to the `dist` folder:
+Generate a production-ready build to the `_site` folder:
 
 ``` bash
 npm run build:prod

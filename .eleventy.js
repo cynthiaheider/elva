@@ -199,7 +199,7 @@ export default async function(eleventyConfig) {
 
         dir: {
             input: 'content',
-            output: 'dist',
+            output: '_site',
             data: '_data',
             includes: `../themes/${eleventyConfig.globalData.settings.theme}/_includes`,
             layouts: `../themes/${eleventyConfig.globalData.settings.theme}/_layouts`

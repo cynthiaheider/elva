@@ -7,7 +7,7 @@ export default async function(src, alt, sizes, caption = '', classes = '', loadi
         // set your required image sizes here
         widths: [300, 600, 1200, 2400, 'auto'],
         urlPath: '/assets/img/',
-        outputDir: './dist/assets/img/',
+        outputDir: './_site/assets/img/',
         sharpWebpOptions: {
             options: {
                 quality: 85,

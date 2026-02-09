@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="sv-se" dir="ltr" x-data="" :data-theme="$store.elva.theme">
+    <head>
+
+        <!-- charset / viewport -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- title / description -->
+        <title>Taggade “tag1” • elva</title>
+		<meta name="description" content="Allt innehåll taggat: “tag1“.">
+
+        <!-- canonical / alternates -->
+        <link rel="canonical" href="http://localhost:8081/sv/tag/tag1/">
+        <link rel="alternate" hreflang="sv" href="http://localhost:8081/sv/tag/tag1/">
+        <link rel="alternate" hreflang="en" href="http://localhost:8081/tag/tag1/">
+
+        <!-- open graph -->
+        <meta property="og:site_name" content="elva">
+        <meta property="og:title" content="Taggade “tag1” • elva">
+        <meta property="og:description" content="Allt innehåll taggat: “tag1“.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://localhost:8081/sv/tag/tag1/">
+        <meta property="og:logo" content="http://localhost:8081/assets/img/icon-192.png">
+        <meta property="og:image" content="http://localhost:8081/assets/img/opengraph-default.png">
+        <meta property="og:image:alt" content="A Swedish description of the default opengraph image">
+        <meta property="og:locale" content="sv-se">
+
+        <!-- icons -->
+        <link rel="icon" href="http://localhost:8081/favicon.ico" sizes="any">
+        <link rel="icon" href="http://localhost:8081/assets/img/icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="http://localhost:8081/assets/img/icon-180.png">
+
+        <!-- styles -->
+        <style>*, :before, :after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul[role="list"], ol[role="list"] {
+  list-style: none;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
+}
+
+img, picture, svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #efc571;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+  --background: var(--nord6);
+  --background-soft: var(--nord4);
+  --foreground: var(--nord0);
+  --foreground-soft: color-mix(in srgb, var(--nord6) 30%, var(--nord0));
+  --link: color-mix(in srgb, var(--nord10) 70%, var(--nord0));
+  --link-hover: var(--nord0);
+  --divider: color-mix(in srgb, var(--nord6) 80%, var(--nord0));
+  --code-background: var(--nord0);
+  --code-default: var(--nord6);
+  --code-regex: var(--nord13);
+  --code-tag: var(--nord9);
+  --code-comment: var(--nord10);
+  --code-selector: var(--nord14);
+  --code-number: var(--nord15);
+  --code-function: var(--nord8);
+  --font-base: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen, serif;
+  --font-headings: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --step--1: clamp(.94rem, calc(.91rem + .13vw), 1.03rem);
+  --step-0: clamp(1.13rem, calc(1.06rem + .34vw), 1.38rem);
+  --step-1: clamp(1.35rem, calc(1.22rem + .66vw), 1.83rem);
+  --step-2: clamp(1.62rem, calc(1.4rem + 1.12vw), 2.44rem);
+  --step-3: clamp(1.94rem, calc(1.59rem + 1.78vw), 3.26rem);
+  --step-4: clamp(2.33rem, calc(1.79rem + 2.72vw), 4.34rem);
+  --step-5: clamp(2.8rem, calc(1.99rem + 4.05vw), 5.79rem);
+  --step-6: clamp(3.36rem, calc(2.18rem + 5.91vw), 7.71rem);
+  --tracking: -.02ch;
+  --tracking-s: -.055ch;
+  --gutter: var(--space-s-m);
+  --border-radius: var(--step-0);
+  --space-3xs: clamp(.31rem, calc(.3rem + .08vw), .38rem);
+  --space-2xs: clamp(.56rem, calc(.53rem + .17vw), .69rem);
+  --space-xs: clamp(.88rem, calc(.82rem + .25vw), 1.06rem);
+  --space-s: clamp(1.13rem, calc(1.06rem + .34vw), 1.38rem);
+  --space-m: clamp(1.69rem, calc(1.59rem + .51vw), 2.06rem);
+  --space-l: clamp(2.25rem, calc(2.11rem + .68vw), 2.75rem);
+  --space-xl: clamp(3.38rem, calc(3.17rem + 1.02vw), 4.13rem);
+  --space-2xl: clamp(4.5rem, calc(4.23rem + 1.36vw), 5.5rem);
+  --space-3xl: clamp(6.75rem, calc(6.34rem + 2.03vw), 8.25rem);
+  --space-3xs-2xs: clamp(.31rem, calc(.21rem + .51vw), .69rem);
+  --space-2xs-xs: clamp(.56rem, calc(.43rem + .68vw), 1.06rem);
+  --space-xs-s: clamp(.88rem, calc(.74rem + .68vw), 1.38rem);
+  --space-s-m: clamp(1.13rem, calc(.87rem + 1.27vw), 2.06rem);
+  --space-m-l: clamp(1.69rem, calc(1.4rem + 1.44vw), 2.75rem);
+  --space-l-xl: clamp(2.25rem, calc(1.74rem + 2.54vw), 4.13rem);
+  --space-xl-2xl: clamp(3.38rem, calc(2.8rem + 2.88vw), 5.5rem);
+  --space-2xl-3xl: clamp(4.5rem, calc(3.48rem + 5.08vw), 8.25rem);
+  --space-s-l: clamp(1.13rem, calc(.68rem + 2.2vw), 2.75rem);
+  --space-m-3xl: clamp(1.69rem, calc(-.09rem + 8.9vw), 8.25rem);
+  --space-s-2xl: clamp(1.13rem, calc(-.06rem + 5.93vw), 5.5rem);
+  --transition-base: .25s ease;
+  --transition-movement: .2s linear;
+  --transition-fade: .2s ease;
+  --transition-bounce: .5s cubic-bezier(.5, .05, .2, 1.5);
+  --focus-outline: .3ch solid var(--nord13);
+}
+
+:root[data-theme="dark"] {
+  --background: var(--nord0);
+  --background-soft: var(--nord2);
+  --foreground: var(--nord6);
+  --foreground-soft: color-mix(in srgb, var(--nord6) 70%, var(--nord0));
+  --link: var(--nord8);
+  --link-hover: var(--nord6);
+  --divider: var(--nord3);
+  --code-background: var(--nord1);
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-base);
+  font-size: var(--step-0);
+  letter-spacing: var(--tracking);
+  transition: background var(--transition-base), color var(--transition-base);
+  line-height: 1.4;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+:focus {
+  transition: var(--transition-base);
+  outline: var(--focus-outline);
+  outline-offset: .3ch;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+}
+
+iframe:focus-within {
+  outline: none;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:target {
+  scroll-margin-top: 2ex;
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+hr {
+  border-top: 1px solid var(--divider);
+  border-bottom: none;
+}
+
+p > code, li > code {
+  background-color: var(--background-soft);
+  border-radius: var(--border-radius);
+  padding: .2ch .5ch;
+}
+
+table {
+  border: 1px solid var(--foreground-soft);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th {
+  font-family: var(--font-headings);
+}
+
+table th, table td {
+  border: 1px solid var(--foreground-soft);
+  padding: var(--space-2xs);
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: var(--background-soft);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+  text-wrap: balance;
+}
+
+h1, h2, h3 {
+  letter-spacing: var(--tracking-s);
+  line-height: 1;
+}
+
+h1 {
+  font-size: var(--step-4);
+}
+
+h2 {
+  font-size: var(--step-3);
+}
+
+h3 {
+  font-size: var(--step-2);
+}
+
+h4 {
+  font-size: var(--step-1);
+}
+
+h5, h6 {
+  font-size: var(--step-0);
+}
+
+blockquote:not([class]) {
+  font-size: var(--step-1);
+}
+
+blockquote:not([class]) p:last-of-type {
+  font-family: var(--font-base);
+  font-size: var(--size-step-1);
+  font-weight: normal;
+}
+
+blockquote p:before {
+  content: open-quote;
+}
+
+blockquote p:after {
+  content: close-quote;
+}
+
+h4, h5, h6, p, li, blockquote:not([class]) {
+  max-width: 65ch;
+}
+
+p:has( > picture) {
+  max-width: initial;
+  width: 100%;
+}
+
+h1, h2, h3 {
+  max-width: 20ch;
+}
+
+mark {
+  background-color: var(--nord13);
+  color: var(--nord0);
+}
+
+figure {
+  position: relative;
+}
+
+figure > figcaption {
+  bottom: var(--space-s-m);
+  left: var(--space-s-m);
+  color: var(--background);
+  margin-right: var(--space-s-m);
+  background-color: var(--foreground);
+  padding: var(--space-2xs) var(--space-xs) var(--space-3xs);
+  box-shadow: 0px 4px color-mix(in srgb, var(--foreground), var(--black) 9%);
+  border-radius: var(--border-radius);
+  font-size: var(--step--1);
+  position: absolute;
+}
+
+figure > figcaption::selection {
+  background: var(--nord13);
+  color: var(--nord0);
+}
+
+.entry-header {
+  margin-bottom: var(--space-m, 1em);
+}
+
+.entry-content > * + * {
+  margin-top: var(--space-m, 1em);
+}
+
+.screen-reader-text {
+  clip: rect(1px,1px,1px,1px);
+  clip-path: inset(50%);
+  border: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  word-wrap: normal !important;
+}
+
+figure picture img, .rounded {
+  border-radius: var(--border-radius);
+}
+
+.subtle {
+  font-size: var(--step--1);
+  color: var(--foreground-soft);
+}
+
+.notice {
+  padding: var(--space-s) var(--space-s) calc(var(--space-s) - 4px) var(--space-s);
+  border-radius: var(--border-radius);
+  color: var(--white);
+  background-color: var(--nord9);
+  box-shadow: 0px 4px color-mix(in srgb, var(--nord9), var(--black) 9%);
+  width: 100%;
+  max-width: initial;
+}
+
+.notice.notice-warning {
+  color: var(--background);
+  background-color: var(--nord13);
+  box-shadow: 0px 4px color-mix(in srgb, var(--nord13), var(--black) 9%);
+}
+
+.notice.notice-error {
+  background-color: var(--nord11);
+  box-shadow: 0px 4px color-mix(in srgb, var(--nord11), var(--black) 9%);
+}
+
+.notice a {
+  color: var(--nord5);
+}
+
+.notice a:hover {
+  color: var(--white);
+}
+
+body {
+  flex-direction: column;
+  display: flex;
+}
+
+#content {
+  padding: var(--space-m-3xl);
+  flex-grow: 1;
+}
+
+.navigation {
+  padding: var(--space-s-l);
+  gap: var(--space-s-l);
+  font-family: var(--font-headings);
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  display: flex;
+}
+
+@media (min-width: 600px) {
+  .navigation {
+    flex-direction: row;
+  }
+}
+
+.site-logo {
+  max-width: 130px;
+  height: auto;
+}
+
+@media (min-width: 600px) {
+  .site-logo {
+    width: 33%;
+    max-width: 100px;
+    position: relative;
+    top: -8px;
+  }
+}
+
+.site-logo svg {
+  color: var(--foreground);
+}
+
+.site-logo:focus {
+  outline: none;
+}
+
+.site-logo:focus svg {
+  color: var(--link);
+}
+
+.navigation-menu {
+  gap: var(--space-s-m);
+  border: 0;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.navigation-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-menu li a {
+  letter-spacing: var(--tracking-s);
+  text-decoration: none;
+}
+
+.navigation-menu li a:focus {
+  outline-offset: .6ch;
+}
+
+a[aria-current="page"] {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+.home #content {
+  flex-direction: column;
+  display: flex;
+}
+
+.home .site-intro {
+  text-align: center;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.home .site-intro svg {
+  max-width: 50%;
+}
+
+.home .site-intro p {
+  margin: var(--space-s-2xl) auto 0 auto;
+  max-width: 550px;
+}
+
+.postlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.postlist li {
+  margin-bottom: var(--space-s-m);
+}
+
+.postlist li:last-child {
+  margin-bottom: 0;
+}
+
+.postlist .postlist-date {
+  color: var(--foreground-soft);
+  font-size: var(--step--1);
+  display: block;
+}
+
+.posts .meta {
+  margin: var(--space-3xs) 0 var(--space-s-2xl) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.posts .meta .meta-tag {
+  display: inline-block;
+}
+
+@media (min-width: 780px) {
+  .posts .meta {
+    gap: var(--space-3xs);
+    display: flex;
+  }
+
+  .posts .meta-reading-time:before {
+    content: "•";
+    padding-left: var(--space-2xs);
+    padding-right: var(--space-2xs);
+    display: inline-block;
+  }
+
+  .posts .meta :nth-child(1 of .meta-tag):before {
+    content: "•";
+    padding-left: var(--space-2xs);
+    padding-right: var(--space-2xs);
+    display: inline-block;
+  }
+}
+
+.posts .meta-date, .posts .meta-reading-time .posts .meta-tag {
+  color: var(--foreground-soft);
+}
+
+.tag h1 {
+  margin: 0 0 var(--space-s-2xl) 0;
+}
+
+.footer {
+  padding: var(--space-s-l);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.rss-icon {
+  width: 44px;
+}
+</style>
+	    <link rel="stylesheet" href="/assets/css/I1WeWk2aAt.css?v=1770673444149" fetchpriority="low">
+
+        <!-- feeds -->
+        <link rel="alternate" href="http://localhost:8081/sv/feed/feed.xml" type="application/atom+xml" title="RSS Feed • elva">
+		<link rel="alternate" href="http://localhost:8081/sv/feed/feed.json" type="application/json" title="JSON Feed • elva">
+        
+
+        <!-- preload / prefetch -->
+        
+
+        <!-- everything else -->
+        <meta name="generator" content="Eleventy v3.1.2">
+        <link rel="manifest" href="http://localhost:8081/sv/site.webmanifest">
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eceff4">
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="me" href="https://github.com/scottsweb">
+        <link rel="me" href="https://toot.scott.ee/@scott">
+        <meta name="fediverse:creator" content="@scott@toot.scott.ee">
+
+        <!-- set theme before page renders to stop fouc -->
+        
+        
+        <!-- inline scripts -->
+        <script>document.documentElement.dataset.theme = localStorage.getItem('theme') === null ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : localStorage.getItem('theme')</script>
+    </head>
+
+    <body class="tag tag-tag1">
+        <!-- header -->
+        <header id="header" role="banner" class="header">
+
+    <a href="#content" class="skip-link">Hoppa till innehållet</a>
+
+    <nav class="navigation">
+    <a class="site-logo" href="/" aria-label="Hem">
+        <svg fill="none" height="242" viewBox="0 0 541 242" width="541" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-labelledby="logo-title" role="img">
+            <title id="logo-title">elva</title>
+            <clipPath id="a"><path d="m0 0h541v242h-541z"></path></clipPath>
+            <clipPath id="b"><path d="m0 0h541v242h-541z"></path></clipPath>
+            <g clip-path="url(#a)">
+                <g clip-path="url(#b)" fill="currentColor">
+                    <path d="m157.943 101.588c.969-2.2645 2.584-3.2351 4.522-3.2351 5.814 0 14.212 8.0881 14.212 15.5291 0 41.736-34.237 128.118-107.8795 128.118-50.7099 0-68.7975-34.618-68.7975-75.706 0-52.412 31.3303-92.5294 72.3504-92.5294 29.3926 0 47.8026 17.1471 47.8026 43.3534 0 26.205-23.5782 56.941-71.3811 57.588 4.8449 16.176 15.8267 23.617 28.7464 23.617 41.9887 0 63.6297-52.735 80.4247-96.735zm-111.755 51.118c27.4544-11.324 35.5292-23.618 35.5292-33.324 0-6.47-2.907-10.029-9.0438-10.029-14.2117 0-26.4854 19.412-26.4854 43.353z"></path>
+                    <path d="m265.817 101.588c2.584-9.0586 18.733 2.265 18.733 12.294 0 41.736-31.33 128.118-85.27 128.118-46.511 0-63.307-35.912-62.338-125.206 0-70.2058 23.579-116.794 66.86-116.794 27.131 0 38.436 19.4118 38.436 54.6765 0 37.2059-20.348 73.1175-59.108 102.2355.646 28.47 11.305 41.412 24.871 41.412 26.162 0 44.896-53.383 57.816-96.736zm-82.364 17.147c13.566-25.235 21.964-47.8821 21.964-65.0291 0-14.5588-2.907-18.1177-7.106-18.1177-8.075 0-13.566 11.9706-14.858 83.1468z"></path>
+                    <path d="m243.853 110.324c0-18.1181 17.442-32.3534 31.007-32.3534 15.181 0 15.181 5.8236 23.256 76.3534 3.23 29.441 6.137 44 15.504 44 6.459 0 12.273-11 15.503-24.265-12.919-9.706-17.441-27.5-17.441-50.794 0-30.7355 10.335-48.5296 26.485-48.5296 21.641 0 30.038 28.1466 30.038 50.7936 0 7.765-.323 15.53-1.292 22.971 13.889-2.912 23.902-16.176 35.853-46.912.969-2.2644 2.584-3.235 4.521-3.235 5.491 0 14.212 8.088 14.212 15.529 0 39.471-21.64 67.618-61.045 68.912-10.336 35.265-30.362 58.883-54.909 58.883-41.666 0-61.692-86.383-61.692-131.353z"></path>
+                    <path d="m466.712 209c-9.367 18.441-22.287 32.353-38.436 32.353-24.548 0-49.418-25.235-49.418-63.412 0-60.176 30.361-104.1764 68.797-104.1764 15.181 0 22.933 9.0589 27.455 20.7059 2.583-11.9706 5.49-16.5 12.273-16.5 13.243 0 23.902 8.0883 23.902 18.1177 0 12.9408-6.137 71.1768-6.137 83.7938 0 7.765 3.23 10.03 8.398 10.03 4.522 0 8.72-3.559 11.95-8.412 1.938-3.235 3.876-5.5 7.106-5.5 4.845 0 8.398 4.529 8.398 12.294 0 26.853-12.274 53.706-31.33 53.706-16.796 0-35.529-14.235-42.958-33zm-45.865-34.941c0 8.412 2.261 14.882 7.752 14.882 16.149 0 31.653-44.323 31.653-63.412 0-6.47-2.261-9.382-6.137-9.382-13.243 0-33.268 31.059-33.268 57.912z"></path>
+                </g>
+            </g>
+        </svg>
+    </a>
+    <ul class="navigation-menu">
+        
+        <li>
+            <a href="/sv/om/">
+                Om
+            </a>
+        </li>
+        <li>
+            <a href="/sv/dokumentation/">
+                Dokumentation
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/scottsweb/elva">
+                GitHub
+            </a>
+        </li>
+    </ul>
+
+    <div class="switch-language">
+	
+		
+			
+
+			
+				
+			
+
+			
+				<a href="/tag/tag1/" lang="en" hreflang="en" aria-label="EN: English">
+					EN
+				</a>
+			
+		
+	
+		
+			<a href="/sv/tag/tag1/" lang="sv" hreflang="sv" aria-label="SE: Svenska" aria-current="page" class="current">
+				SE
+			</a>
+		
+	
+</div>
+</nav>
+
+</header>
+
+        <!-- content -->
+        <main id="content"><h1 id="taggade-tag1">Taggade “tag1”</h1>
+
+
+
+<div class="posts-list">
+    
+    <ol reversed="" class="postlist" style="counter-reset: start-from 3">
+
+	<li class="postlist-item">
+		<a href="/sv/writing/komma-igang/" class="postlist-link">Komma igång</a>
+		<time class="postlist-date" datetime="2023-08-07T00:00:00Z">söndag 6 augusti 2023</time>
+	</li>
+
+	<li class="postlist-item">
+		<a href="/sv/writing/other-embed-examples/" class="postlist-link">Andra inbäddningsexempel</a>
+		<time class="postlist-date" datetime="2023-07-31T00:00:00Z">söndag 30 juli 2023</time>
+	</li>
+
+</ol>
+
+</div></main>
+
+        <!-- footer -->
+        <footer id="footer" class="footer">
+
+    <div class="switch-wrapper" x-data="" x-cloak="">
+	<input class="switch" id="darkmode" type="checkbox" value="dark" :checked="$store.elva.theme === 'dark'">
+	<label class="switch-btn" for="darkmode" tabindex="0" aria-label="Växla mellan mörkt/ljus tema" @keydown.prevent.space="" @click="$store.elva.themeToggle()" @keyup.prevent.space="$store.elva.themeToggle()" :class="$store.elva.theme === 'dark' ? 'switch-button-on' : 'switch-button-off'">
+        <svg class="icon icon-sun" width="1em" height="1em" viewBox="0 0 24 24" fill="none" aria-labelledby="icon-sun" xmlns="http://www.w3.org/2000/svg">
+            <title id="icon-sun">Ljus</title>
+            <circle cx="11.9998" cy="11.9998" r="5.75375" fill="currentColor"></circle>
+            <g>
+                <circle cx="3.08982" cy="6.85502" r="1.71143" transform="rotate(-60 3.08982 6.85502)" fill="currentColor"></circle>
+                <circle cx="3.0903" cy="17.1436" r="1.71143" transform="rotate(-120 3.0903 17.1436)" fill="currentColor"></circle>
+                <circle cx="12" cy="22.2881" r="1.71143" fill="currentColor"></circle>
+                <circle cx="20.9101" cy="17.1436" r="1.71143" transform="rotate(-60 20.9101 17.1436)" fill="currentColor"></circle>
+                <circle cx="20.9101" cy="6.8555" r="1.71143" transform="rotate(-120 20.9101 6.8555)" fill="currentColor"></circle>
+                <circle cx="12" cy="1.71143" r="1.71143" fill="currentColor"></circle>
+            </g>
+            
+        </svg>
+        <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 50 50" aria-labelledby="icon-moon">
+            <title id="icon-moon">Mörk</title>
+            <path d="M 43.81 29.354 C 43.688 28.958 43.413 28.626 43.046 28.432 C 42.679 28.238 42.251 28.198 41.854 28.321 C 36.161 29.886 30.067 28.272 25.894 24.096 C 21.722 19.92 20.113 13.824 21.683 8.133 C 21.848 7.582 21.697 6.985 21.29 6.578 C 20.884 6.172 20.287 6.022 19.736 6.187 C 10.659 8.728 4.691 17.389 5.55 26.776 C 6.408 36.163 13.847 43.598 23.235 44.451 C 32.622 45.304 41.28 39.332 43.816 30.253 C 43.902 29.96 43.9 29.647 43.81 29.354 Z" fill="currentColor"></path>
+        </svg>
+	</label>
+</div>
+
+
+    <p class="subtle">Året är 2026.</p>
+
+    <a href="/sv/feed/feed.xml" class="rss-icon" aria-label="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="icon-rss" role="img" width="24" height="24">
+            <title id="icon-rss">RSS Feed</title>
+            <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+</footer>
+
+        <!-- scripts -->
+        <script src="/assets/js/0_T0PidCAD.js?v=1770673444150" defer=""></script>
+    </body>
+</html>

@@ -33,7 +33,7 @@ Kör Eleventy för webbplatsutveckling. Se webbplatsen på `http://localhost:808
 npm run dev
 ```
 
-Generera en produktionsklar build till mappen `dist`:
+Generera en produktionsklar build till mappen `_site`:
 
 ``` bash
 npm run build:prod
