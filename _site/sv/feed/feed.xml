@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/sv/feed/feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:base="http://localhost:8081/">
+    <title>RSS Feed • elva</title>
+    <subtitle>A multilingual, clean, green, 11ty starter theme</subtitle>
+	<icon>http://localhost:8081/assets/img/icon-512.png</icon>
+    <link href="http://localhost:8081/sv/feed/feed.xml" rel="self"/>
+    <link href="http://localhost:8081/" />	
+	<updated>2023-08-07T00:00:00Z</updated>
+	<id>http://localhost:8081/</id>
+	<author>
+		<name>Scott Evans</name>
+		<email>noreply@example.com</email>
+	</author>
+	<entry>
+		<title>Komma igång</title>
+		<link href="http://localhost:8081/sv/writing/komma-igang/" />
+		<updated>2023-08-07T00:00:00Z</updated>
+		<id>http://localhost:8081/sv/writing/komma-igang/</id>
+		<content xml:lang="sv" type="html">&lt;p&gt;Skapa en katalog och navigera till den:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; my-site-name
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; my-site-name&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Klona elva förvaret:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/scottsweb/elva.git &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Installationsberoenden:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Kör Eleventy för webbplatsutveckling. Se webbplatsen på &lt;code&gt;http://localhost:8081&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run dev&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Generera en produktionsklar build till mappen &lt;code&gt;dist&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run build:prod&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Du kan också ställa in miljövariabeln &lt;code&gt;NODE_ENV=production&lt;/code&gt; i din värdkontrollpanel och använda &lt;code&gt;npm run build&lt;/code&gt; som med tidigare versioner av elva.&lt;/p&gt;
+&lt;p&gt;För att använda &lt;a href=&quot;https://frontmatter.codes/&quot;&gt;Front Matter CMS&lt;/a&gt;, installera &lt;a href=&quot;https://vscodium.com/&quot;&gt;VSCodium&lt;/a&gt; eller &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt; och aktivera tillägget (om det inte aktiveras automatiskt). Den öppnas varje gång du startar ditt projekt.&lt;/p&gt;
+</content>
+		<enclosure url="http://localhost:8081/assets/img/opengraph-default.png" length="0" type="image/png" />
+		<category term="tag1" />
+		<category term="tag2" />
+	</entry>
+	<entry>
+		<title>Importera innehåll</title>
+		<link href="http://localhost:8081/sv/writing/imports/" />
+		<updated>2023-08-06T00:00:00Z</updated>
+		<id>http://localhost:8081/sv/writing/imports/</id>
+		<content xml:lang="sv" type="html">&lt;p&gt;Du kan importera innehåll till elva med hjälp av &lt;a href=&quot;https://github.com/11ty/eleventy-import&quot;&gt;11ty import&lt;/a&gt;. Den stöder import av innehåll från WordPress, RSS/Atom, Bluesky, Fediverse och YouTube.&lt;/p&gt;
+&lt;p&gt;Här är några exempel på hur man använder den med elva:&lt;/p&gt;
+&lt;h2 id=&quot;word-press&quot; tabindex=&quot;-1&quot;&gt;WordPress&lt;/h2&gt;
+&lt;p&gt;Kör följande kommando från elva-mappen i Terminal:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Importera *alla* inlägg från WordPress API&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Utkast till inlägg tillgängliga när miljövariabler WORDPRESS_USERNAME och &lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# WORDPRESS_PASSWORD tillhandahålls, läs mer: https://www.11ty.dev/docs/environment-vars/&lt;/span&gt;
+
+npx @11ty/import wordpress https://blog.fontawesome.com &lt;span class=&quot;token parameter variable&quot;&gt;--output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;content/sv/posts/ 
+
+&lt;span class=&quot;token comment&quot;&gt;# Användbara flaggor vid testning:&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# --dryrun --assetrefs=disabled --within=7d&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;notice notice-warning&quot;&gt;Obs! Bilder importeras tillsammans med markdown. Du kan behöva flytta tillgångar till en mer lämplig mapp (/content/assets/) eller uppdatera referenserna till dina bilder.&lt;/div&gt;
+&lt;h2 id=&quot;fediverse&quot; tabindex=&quot;-1&quot;&gt;Fediverse&lt;/h2&gt;
+&lt;p&gt;Kör följande kommando från elva-mappen i Terminal:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Importera senaste Mastodon-inlägg (via RSS)&lt;/span&gt;
+
+npx @11ty/import fediverse eleventy@fosstodon.org &lt;span class=&quot;token parameter variable&quot;&gt;--output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;content/sv/toots/
+
+&lt;span class=&quot;token comment&quot;&gt;# Användbara flaggor vid testning:&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# --dryrun --assetrefs=disabled --within=7d&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;atom-feeds&quot; tabindex=&quot;-1&quot;&gt;Atom Feeds&lt;/h2&gt;
+&lt;p&gt;Kör följande kommando från elva-mappen i Terminal:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Importera Atom-flöde&lt;/span&gt;
+
+npx @11ty/import atom https://www.11ty.dev/blog/feed.xml &lt;span class=&quot;token parameter variable&quot;&gt;--output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;content/sv/posts/ 
+
+&lt;span class=&quot;token comment&quot;&gt;# Importera GitHub releases (via Atom)&lt;/span&gt;
+
+npx @11ty/import atom https://github.com/11ty/eleventy/releases.atom &lt;span class=&quot;token parameter variable&quot;&gt;--output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;content/sv/releases/
+
+&lt;span class=&quot;token comment&quot;&gt;# Användbara flaggor vid testning:&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# --dryrun --assetrefs=disabled --within=7d&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Du kan &lt;a href=&quot;https://github.com/11ty/eleventy-import?tab=readme-ov-file#11tyimport&quot;&gt;se fler exempel i den officiella dokumentationen&lt;/a&gt;.&lt;/p&gt;
+</content>
+		<enclosure url="http://localhost:8081/assets/img/opengraph-default.png" length="0" type="image/png" />
+		<category term="tag3" />
+		<category term="tag4" />
+	</entry>
+	<entry>
+		<title>Lägger till ytterligare språk</title>
+		<link href="http://localhost:8081/sv/writing/adding-additional-languages/" />
+		<updated>2023-08-05T00:00:00Z</updated>
+		<id>http://localhost:8081/sv/writing/adding-additional-languages/</id>
+		<content xml:lang="sv" type="html"></content>
+		<enclosure url="http://localhost:8081/assets/img/opengraph-default.png" length="0" type="image/png" />
+	</entry>
+	<entry>
+		<title>Front matter</title>
+		<link href="http://localhost:8081/sv/writing/frontmatter/" />
+		<updated>2023-08-04T00:00:00Z</updated>
+		<id>http://localhost:8081/sv/writing/frontmatter/</id>
+		<content xml:lang="sv" type="html">&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;layout: post
+title: Huvudsidans titel, rubrik nivå ett
+date: 2023-08-04
+modified: 2023-08-04
+thumbnail: /assets/img/test.jpg
+thumbnailDescription: En alternativ textbeskrivning för miniatyrbilden
+tags: &#39;page-demo&#39;
+draft: true
+eleventyExcludeFromCollections: true
+seo:
+  title: Anpassad titel (standard till titel)
+  description: SEO beskrivning
+  slug: mmm-slugs
+  changeFrequency: daily
+  sitemapPriority: &#39;1.0&#39;
+  excludeFromSitemap: true
+  noIndex: true&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;layout&lt;/code&gt; — &lt;a href=&quot;https://www.11ty.dev/docs/layouts/&quot;&gt;Sidlayout för sidan&lt;/a&gt;. Standard är &lt;code&gt;post&lt;/code&gt; för inlägg och &lt;code&gt;page&lt;/code&gt; för sidor.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt; — Titeln på den aktuella sidan.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;date&lt;/code&gt; — &lt;a href=&quot;https://www.11ty.dev/docs/dates/&quot;&gt;Publiceringsdatum&lt;/a&gt;. Du kan ställa in speciella värden här som &lt;code&gt;Last Modified&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;modifed&lt;/code&gt; — Ändrat datum.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;thumbnail&lt;/code&gt; — Relativ väg till miniatyr/opengraph bild. Storlek &lt;code&gt;1200px x 630px&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;thumbnailDescription&lt;/code&gt; — Alt text för miniatyrbild.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tags&lt;/code&gt; – &lt;a href=&quot;https://www.11ty.dev/docs/collections/#add-to-a-collection-using-tags&quot;&gt;Taggar&lt;/a&gt; används för närvarande för anpassade body classes.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;draft&lt;/code&gt; — Utkastsidor kommer att visas lokalt och på scenen men inte i produktion.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;eleventyExcludeFromCollections&lt;/code&gt; — &lt;a href=&quot;https://www.11ty.dev/docs/collections/#how-to-exclude-content-from-collections&quot;&gt;Göm från 11ty samlingar&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;seo.title&lt;/code&gt; — Ställ in anpassad sidtitel för sökmotorer och opengraph.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;seo.description&lt;/code&gt; — Ställ in sidbeskrivningen för sökmotorer och opengraph.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;seo.slug&lt;/code&gt; — Ställ in en ny slug för sidan som skiljer sig från filnamnet.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;seo.changeFrequency&lt;/code&gt; — &lt;a href=&quot;https://www.sitemaps.org/protocol.html#changefreqdef&quot;&gt;Hur ofta ändras den här sidan&lt;/a&gt;?&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;seo.sitemapPriority&lt;/code&gt; — &lt;a href=&quot;https://www.sitemaps.org/protocol.html#prioritydef&quot;&gt;Prioriteten för denna webbadress i förhållande till andra webbadresser på din webbplats&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;seo.excludeFromSitemap&lt;/code&gt; — Dölj den här sidan från din sitemap.xml.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;seo.noIndex&lt;/code&gt; — Avråda från sökmotor indexering.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nästan allt front matter är valfritt, förutom titlar (och datum för posts).&lt;/p&gt;
+</content>
+		<enclosure url="http://localhost:8081/assets/img/opengraph-default.png" length="0" type="image/png" />
+		<category term="tag4" />
+		<category term="tag5" />
+	</entry>
+	<entry>
+		<title>Bildinbäddnings exempel</title>
+		<link href="http://localhost:8081/sv/writing/bildinbaddnings-exempel/" />
+		<updated>2023-08-03T00:00:00Z</updated>
+		<id>http://localhost:8081/sv/writing/bildinbaddnings-exempel/</id>
+		<content xml:lang="sv" type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed risus consectetur, gravida justo ac, convallis leo. Duis et nisi ullamcorper, auctor quam vel, sollicitudin ligula. Vestibulum faucibus metus nec diam egestas, sed auctor elit rhoncus. Duis a velit vel lacus placerat porta ac vitae urna. Etiam a dictum tortor, id venenatis eros. Donec vehicula ex ut quam porta auctor. Suspendisse at purus enim. Donec sed pharetra nisl.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;http://localhost:8081/assets/img/sv.jpg&quot; alt=&quot;Båten Stockholms Ström 2 glider över vattnet med Stockholm i fjärran.&quot;&gt;&lt;/figure&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token url&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;[&lt;span class=&quot;token content&quot;&gt;Båten Stockholms Ström 2 glider över vattnet med Stockholm i fjärran.&lt;/span&gt;](&lt;span class=&quot;token url&quot;&gt;/assets/img/sv.jpg&lt;/span&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nulla vehicula condimentum neque quis tincidunt. Phasellus a dignissim urna. In vitae pulvinar orci, et feugiat orci. Morbi sit amet velit sit amet ex tincidunt vestibulum. Ut eros sem, aliquet quis ultrices vestibulum, lobortis eu quam. Aenean nec urna suscipit, iaculis ipsum sit amet, vestibulum orci. Phasellus feugiat eu dolor quis efficitur. Aenean non luctus diam. Aenean egestas lectus est. In sagittis tellus placerat tincidunt semper. Nullam mattis nisi massa, vel venenatis turpis suscipit ac. Maecenas maximus consequat ligula, placerat sodales ipsum commodo a.&lt;/p&gt;
+&lt;p&gt;Aenean ullamcorper egestas libero, non consequat enim mollis et. Aliquam ut lectus ac ligula tempus molestie. Donec cursus, libero cursus efficitur aliquam, eros purus porta purus, et scelerisque est erat et odio. Mauris bibendum ex ipsum, vulputate ultricies lacus tempus ac. Sed quis leo risus. Cras varius porttitor nibh vel accumsan. In efficitur sapien vitae felis porta, eu vestibulum felis pretium. Nulla nibh odio, dignissim vel dapibus a, feugiat in felis. Morbi convallis malesuada dui, quis iaculis nibh consectetur id. Vivamus tempus porttitor fermentum. Phasellus luctus nibh orci, et dignissim libero dapibus sit amet. Duis enim urna, viverra in condimentum sed, finibus eget nisl. Donec at mollis nunc. Duis vel felis metus. Etiam fermentum nec elit id sodales.&lt;/p&gt;
+</content>
+		<enclosure url="http://localhost:8081/assets/img/opengraph-default.png" length="0" type="image/png" />
+		<category term="tag2" />
+		<category term="tag3" />
+	</entry>
+	<entry>
+		<title>Markdown testa</title>
+		<link href="http://localhost:8081/sv/writing/markdown-testa/" />
+		<updated>2023-08-02T00:00:00Z</updated>
+		<id>http://localhost:8081/sv/writing/markdown-testa/</id>
+		<content xml:lang="sv" type="html">&lt;p&gt;&lt;strong&gt;Innehåll:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#citat-kod-och-typografi&quot;&gt;Citat, kod och typografi&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#listor&quot;&gt;Listor&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#ordered&quot;&gt;Ordered&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#unordered&quot;&gt;Unordered&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#meddelanden-och-laenkar&quot;&gt;Meddelanden och länkar&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#rubrik-niva-3&quot;&gt;Rubrik nivå 3&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#tabeller&quot;&gt;Tabeller&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;p&gt;Lorem ipsum dolor &lt;strong&gt;sit amet&lt;/strong&gt;, consectetur adipiscing elit ©. Sed nec &lt;strong&gt;risus elementum&lt;/strong&gt;, tempor tortor non, bibendum libero. Suspendisse potenti. Vivamus dapibus &lt;em&gt;tortor neque&lt;/em&gt;, sed aliquet lacus &lt;em&gt;elementum nec&lt;/em&gt;. Morbi vel ligula vitae leo placerat sollicitudin quis at eros. Pellentesque tristique mi a tortor auctor, sit amet elementum augue pulvinar. Donec non orci in &lt;s&gt;ipsum mollis&lt;/s&gt; tempor. Integer libero est, H&lt;sub&gt;2&lt;/sub&gt;O pharetra &lt;ins&gt;vitae&lt;/ins&gt; facilisis quis 🇸🇪.&lt;/p&gt;
+&lt;h2 id=&quot;citat-kod-och-typografi&quot; tabindex=&quot;-1&quot;&gt;Citat, kod och typografi&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Maecenas vel quam id eros tristique sollicitudin. Nunc tincidunt orci malesuada, vehicula mauris ut, sollicitudin lacus. Quisque eget vestibulum quam.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Aenean ac tincidunt felis ®. Fusce eu &lt;mark&gt;arcu blandit&lt;/mark&gt;, consectetur odio ullamcorper, maximus erat ®. Fusce aliquam sapien a commodo aliquet. Phasellus placerat sagittis euismod. Curabitur vitae est id nunc ornare — scelerisque in vitae nisl. In non mi leo…&lt;/p&gt;
+&lt;!-- FM:Snippet:Start data:{&quot;id&quot;:&quot;Quote&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;quote&quot;,&quot;value&quot;:&quot;Maecenas vel quam id eros tristique sollicitudin. Nunc tincidunt orci malesuada, vehicula mauris ut, sollicitudin lacus. Quisque eget vestibulum quam.&quot;},{&quot;name&quot;:&quot;author&quot;,&quot;value&quot;:&quot;Scott Evans&quot;},{&quot;name&quot;:&quot;cite&quot;,&quot;value&quot;:&quot;Hemsida&quot;},{&quot;name&quot;:&quot;url&quot;,&quot;value&quot;:&quot;https://scott.ee&quot;}]} --&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Proin sit amet neque vitae leo posuere pellentesque vel non augue. Sed efficitur ipsum neque, non gravida ipsum vestibulum eget.&lt;/p&gt;
+  &lt;figcaption&gt;— Scott Evans, &lt;cite&gt;&lt;a href=&quot;https://scott.ee&quot;&gt;Hemsida&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;
+&lt;/blockquote&gt;
+&lt;!-- FM:Snippet:End --&gt;
+&lt;p&gt;Cras quis sollicitudin eros ©. Fusce eget velit &lt;code&gt;quis nulla pharetra eleifend id vitae nisl&lt;/code&gt;. Aenean vehicula sem vitae nunc semper porta. Donec porta leo vitae massa accumsan consequat. Praesent quis sodales orci, ut elementum quam. Phasellus ultrices lectus in tempus varius±. Duis est nulla – imperdiet dapibus ultricies non 19&lt;sup&gt;th&lt;/sup&gt;, hendrerit non mauris™.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; bar&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Donec tincidunt mauris id metus iaculis tempor. Proin sit amet neque vitae leo posuere pellentesque vel non augue. Sed efficitur ipsum neque, non gravida ipsum vestibulum eget. Fusce augue lacus, vestibulum efficitur tincidunt et, posuere sed sem. Etiam tortor lorem, vestibulum ac lectus vitae, feugiat egestas augue. Proin id suscipit mi.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;listor&quot; tabindex=&quot;-1&quot;&gt;Listor&lt;/h2&gt;
+&lt;h3 id=&quot;ordered&quot; tabindex=&quot;-1&quot;&gt;Ordered&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Consectetur adipiscing elit&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Integer molestie lorem at massa&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can use sequential numbers…&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;…or keep all the numbers as &lt;code&gt;1.&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Starta numrering med offset:&lt;/p&gt;
+&lt;ol start=&quot;57&quot;&gt;
+&lt;li&gt;foo&lt;/li&gt;
+&lt;li&gt;bar&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;unordered&quot; tabindex=&quot;-1&quot;&gt;Unordered&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Skapa en lista genom att börja en rad med &lt;code&gt;+&lt;/code&gt;, &lt;code&gt;-&lt;/code&gt;, eller &lt;code&gt;*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Underlistor skapas genom att dra in 2 mellanslag:
+&lt;ul&gt;
+&lt;li&gt;Byte av markörtecken tvingar ny liststart:
+&lt;ul&gt;
+&lt;li&gt;Ac tristique libero volutpat at&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Nulla volutpat aliquam velit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Superlätt!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;meddelanden-och-laenkar&quot; tabindex=&quot;-1&quot;&gt;Meddelanden och länkar&lt;/h2&gt;
+&lt;div class=&quot;notice notice-notice&quot;&gt;Allmänt meddelande&lt;/div&gt;
+&lt;div class=&quot;notice notice-warning&quot;&gt;Varnings meddelande&lt;/div&gt;
+&lt;div class=&quot;notice notice-error&quot;&gt;Fel meddelande&lt;/div&gt;
+&lt;h3 id=&quot;rubrik-niva-3&quot; tabindex=&quot;-1&quot;&gt;Rubrik nivå 3&lt;/h3&gt;
+&lt;p&gt;Cras quis sollicitudin eros &lt;a href=&quot;https://scott.ee&quot; title=&quot;title text!&quot; target=&quot;_blank&quot;&gt;link with title&lt;/a&gt;. Fusce eget velit quis nulla pharetra eleifend id vitae nisl. Aenean &lt;a href=&quot;https://scott.ee&quot;&gt;normal link&lt;/a&gt; vitae nunc semper porta. Donec porta leo vitae massa accumsan consequat. Praesent quis sodales orci, ut elementum quam. Phasellus ultrices lectus in tempus varius. Duis est nulla, imperdiet dapibus ultricies non, hendrerit non mauris.&lt;/p&gt;
+&lt;h4 id=&quot;rubrik-niva-4&quot; tabindex=&quot;-1&quot;&gt;Rubrik nivå 4&lt;/h4&gt;
+&lt;p&gt;Aenean ac tincidunt felis. Fusce eu arcu blandit, consectetur odio ullamcorper, maximus erat. Fusce aliquam sapien a commodo aliquet. Phasellus placerat sagittis euismod. Curabitur vitae est id nunc ornare scelerisque in vitae nisl. In non mi leo.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/scottsweb/elva&quot;&gt;https://github.com/scottsweb/elva&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;tabeller&quot; tabindex=&quot;-1&quot;&gt;Tabeller&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Titel&lt;/th&gt;
+&lt;th&gt;Beskrivning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Fuseu&lt;/td&gt;
+&lt;td&gt;Aenean ac tincidunt felis. Fusce eu arcu blandit, consectetur odio ullamcorper.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maxim&lt;/td&gt;
+&lt;td&gt;Fusce eu arcu blandit, consectetur odio ullamcorper, maximus erat.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Odio&lt;/td&gt;
+&lt;td&gt;Praesent quis sodales orci.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Högerjusterade kolumner&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Titel&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;Beskrivning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Fuseu&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Aenean ac tincidunt felis. Fusce eu arcu blandit, consectetur odio ullamcorper.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maxim&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Fusce eu arcu blandit, consectetur odio ullamcorper, maximus erat.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Odio&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Praesent quis sodales orci.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+		<enclosure url="http://localhost:8081/assets/img/opengraph-default.png" length="0" type="image/png" />
+		<category term="tag4" />
+		<category term="tag5" />
+	</entry>
+	<entry>
+		<title>Exempel på videoinbäddning</title>
+		<link href="http://localhost:8081/sv/writing/exempel-pa-videoinbaddning/" />
+		<updated>2023-08-01T00:00:00Z</updated>
+		<id>http://localhost:8081/sv/writing/exempel-pa-videoinbaddning/</id>
+		<content xml:lang="sv" type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed risus consectetur, gravida justo ac, convallis leo. Duis et nisi ullamcorper, auctor quam vel, sollicitudin ligula. Vestibulum faucibus metus nec diam egestas, sed auctor elit rhoncus. Duis a velit vel lacus placerat porta ac vitae urna. Etiam a dictum tortor, id venenatis eros. Donec vehicula ex ut quam porta auctor. Suspendisse at purus enim. Donec sed pharetra nisl.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://vimeo.com/147242459&quot;&gt;https://vimeo.com/147242459&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nulla vehicula condimentum neque quis tincidunt. Phasellus a dignissim urna. In vitae pulvinar orci, et feugiat orci. Morbi sit amet velit sit amet ex tincidunt vestibulum. Ut eros sem, aliquet quis ultrices vestibulum, lobortis eu quam. Aenean nec urna suscipit, iaculis ipsum sit amet, vestibulum orci. Phasellus feugiat eu dolor quis efficitur. Aenean non luctus diam. Aenean egestas lectus est. In sagittis tellus placerat tincidunt semper. Nullam mattis nisi massa, vel venenatis turpis suscipit ac. Maecenas maximus consequat ligula, placerat sodales ipsum commodo a.&lt;/p&gt;
+&lt;p&gt;Aenean ullamcorper egestas libero, non consequat enim mollis et. Aliquam ut lectus ac ligula tempus molestie. Donec cursus, libero cursus efficitur aliquam, eros purus porta purus, et scelerisque est erat et odio. Mauris bibendum ex ipsum, vulputate ultricies lacus tempus ac. Sed quis leo risus. Cras varius porttitor nibh vel accumsan. In efficitur sapien vitae felis porta, eu vestibulum felis pretium. Nulla nibh odio, dignissim vel dapibus a, feugiat in felis. Morbi convallis malesuada dui, quis iaculis nibh consectetur id. Vivamus tempus porttitor fermentum. Phasellus luctus nibh orci, et dignissim libero dapibus sit amet. Duis enim urna, viverra in condimentum sed, finibus eget nisl. Donec at mollis nunc. Duis vel felis metus. Etiam fermentum nec elit id sodales.&lt;/p&gt;
+</content>
+		<enclosure url="http://localhost:8081/assets/img/opengraph-default.png" length="0" type="image/png" />
+		<category term="tag2" />
+		<category term="tag4" />
+	</entry>
+	<entry>
+		<title>Andra inbäddningsexempel</title>
+		<link href="http://localhost:8081/sv/writing/other-embed-examples/" />
+		<updated>2023-07-31T00:00:00Z</updated>
+		<id>http://localhost:8081/sv/writing/other-embed-examples/</id>
+		<content xml:lang="sv" type="html">&lt;p&gt;&lt;strong&gt;Innehåll:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#instagram&quot;&gt;Instagram&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#ted&quot;&gt;Ted&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#open-street-map&quot;&gt;OpenStreetMap&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#twitter&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#tik-tok&quot;&gt;TikTok&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#sound-cloud&quot;&gt;SoundCloud&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://localhost:8081/sv/feed/feed.xml#spotify&quot;&gt;Spotify&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;h2 id=&quot;instagram&quot; tabindex=&quot;-1&quot;&gt;Instagram&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed risus consectetur, gravida justo ac, convallis leo. Duis et nisi ullamcorper, auctor quam vel, sollicitudin ligula.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.instagram.com/p/DCRzuiHNdtO/&quot;&gt;https://www.instagram.com/p/DCRzuiHNdtO/&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;https://www.instagram.com/p/DCRzuiHNdtO/&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;ted&quot; tabindex=&quot;-1&quot;&gt;Ted&lt;/h2&gt;
+&lt;p&gt;Nulla vehicula condimentum neque quis tincidunt. Phasellus a dignissim urna. In vitae pulvinar orci, et feugiat orci. Morbi sit amet velit sit amet ex tincidunt vestibulum. Ut eros sem, aliquet quis ultrices.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ted.com/talks/dorcas_naishorua_lessons_from_people_already_adapting_to_the_climate_crisis&quot;&gt;https://www.ted.com/talks/dorcas_naishorua_lessons_from_people_already_adapting_to_the_climate_crisis&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;https://www.ted.com/talks/dorcas_naishorua_lessons_from_people_already_adapting_to_the_climate_crisis&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;open-street-map&quot; tabindex=&quot;-1&quot;&gt;OpenStreetMap&lt;/h2&gt;
+&lt;p&gt;Aenean ullamcorper egestas libero, non consequat enim mollis et. Aliquam ut lectus ac ligula tempus molestie. Donec cursus, libero cursus efficitur aliquam, eros purus porta purus, et scelerisque est erat.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.openstreetmap.org/#map=11/59.3132/18.0155&quot;&gt;https://www.openstreetmap.org/#map=11/59.3132/18.0155&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;https://www.openstreetmap.org/#map=11/59.3132/18.0155&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;twitter&quot; tabindex=&quot;-1&quot;&gt;Twitter&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed risus consectetur, gravida justo ac, convallis leo. Duis et nisi ullamcorper, auctor quam vel, sollicitudin ligula.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://x.com/jack/status/20&quot;&gt;https://x.com/jack/status/20&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;https://x.com/jack/status/20&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;tik-tok&quot; tabindex=&quot;-1&quot;&gt;TikTok&lt;/h2&gt;
+&lt;p&gt;Nulla vehicula condimentum neque quis tincidunt. Phasellus a dignissim urna. In vitae pulvinar orci, et feugiat orci. Morbi sit amet velit sit amet ex tincidunt vestibulum.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.tiktok.com/@nadja_spt/video/7372550534596742433&quot;&gt;https://www.tiktok.com/@nadja_spt/video/7372550534596742433&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;https://www.tiktok.com/@nadja_spt/video/7372550534596742433&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;sound-cloud&quot; tabindex=&quot;-1&quot;&gt;SoundCloud&lt;/h2&gt;
+&lt;p&gt;Aenean ullamcorper egestas libero, non consequat enim mollis et. Aliquam ut lectus ac ligula tempus molestie. Donec cursus, libero cursus efficitur aliquam, eros purus porta purus, et scelerisque est.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://soundcloud.com/hybris/klara-keller-sad-thinking-of-you&quot;&gt;https://soundcloud.com/hybris/klara-keller-sad-thinking-of-you&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;https://soundcloud.com/hybris/klara-keller-sad-thinking-of-you&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;spotify&quot; tabindex=&quot;-1&quot;&gt;Spotify&lt;/h2&gt;
+&lt;p&gt;Aenean ullamcorper egestas libero, non consequat enim mollis et. Aliquam ut lectus ac ligula tempus molestie. Donec cursus, libero cursus efficitur aliquam, eros purus porta purus, et scelerisque.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://open.spotify.com/track/22auw1DYQlYh5XgKv5FtNx&quot;&gt;https://open.spotify.com/track/22auw1DYQlYh5XgKv5FtNx&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;https://open.spotify.com/track/22auw1DYQlYh5XgKv5FtNx&lt;/code&gt;&lt;/pre&gt;
+</content>
+		<enclosure url="http://localhost:8081/assets/img/opengraph-default.png" length="0" type="image/png" />
+		<category term="tag1" />
+		<category term="tag3" />
+		<category term="tag5" />
+	</entry>
+</feed>
