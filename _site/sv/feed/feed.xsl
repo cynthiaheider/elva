@@ -6,7 +6,7 @@
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<title><xsl:value-of select="/atom:feed/atom:title"/></title>
-			<link rel="stylesheet" href="/assets/css/puIrOCfBQL.css?v=1770673679700"/>
+			<link rel="stylesheet" href="/assets/css/puIrOCfBQL.css?v=1770674687458"/>
 		</head>
 		<body class="rss-xslt">
 			<main id="content">

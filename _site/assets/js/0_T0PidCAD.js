@@ -1796,7 +1796,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   };
   var alpine_default = Alpine;
 
-  // node_modules/@vue/shared/_site/shared.esm-bundler.js
+  // node_modules/@vue/shared/dist/shared.esm-bundler.js
   function makeMap(str, expectsLowerCase) {
     const map = /* @__PURE__ */ Object.create(null);
     const list = str.split(",");
@@ -1839,7 +1839,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   var toHandlerKey = cacheStringFunction((str) => str ? `on${capitalize(str)}` : ``);
   var hasChanged = (value, oldValue) => value !== oldValue && (value === value || oldValue === oldValue);
 
-  // node_modules/@vue/reactivity/_site/reactivity.esm-bundler.js
+  // node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
   var targetMap = /* @__PURE__ */ new WeakMap();
   var effectStack = [];
   var activeEffect;
